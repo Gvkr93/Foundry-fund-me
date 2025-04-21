@@ -12,12 +12,12 @@ contract FundFundMe is Script {
         console.log("Most recently deployed FundMe contract: %s", mostRecentlyDeployed);
         vm.startBroadcast();
         FundMe(payable(mostRecentlyDeployed)).fund{value: Send_Val}();
-        vm.stopBroadcast();   
+        vm.stopBroadcast();
         console.log("Funding FundMe contract with %s", Send_Val);
     }
 
     function run() external {
-        //Looks inside broadcast folder based on chainId & picks most latest 
+        //Looks inside broadcast folder based on chainId & picks most latest
         address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment("FundMe", block.chainid);
         vm.startBroadcast();
         fundFundMe(mostRecentlyDeployed);

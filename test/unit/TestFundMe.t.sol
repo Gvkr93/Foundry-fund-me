@@ -6,7 +6,7 @@ import {FundMe} from "../../src/FundMe.sol";
 import {DeployFundMe} from "../../script/DeployFundMe.s.sol";
 
 contract FundMeTest is Test {
-    FundMe fundMe ;
+    FundMe fundMe;
 
     address USER = makeAddr("user");
     uint256 constant Send_Val = 0.1 ether; //10e18
@@ -48,18 +48,18 @@ contract FundMeTest is Test {
 
     function testAddsFunderToArrayOfFunders() public {
         vm.prank(USER);
-        fundMe.fund{value: Send_Val} ();
+        fundMe.fund{value: Send_Val}();
 
         address funder = fundMe.getFunder(0);
         assertEq(funder, USER);
     }
-    
+
     modifier funded() {
         vm.prank(USER);
-        fundMe.fund{value: Send_Val} ();
+        fundMe.fund{value: Send_Val}();
         _;
-    }    
-    
+    }
+
     function testOnlyOwnerCanWithdraw() public funded {
         vm.prank(USER);
         vm.expectRevert();
@@ -86,7 +86,7 @@ contract FundMeTest is Test {
         //Arrange
         uint160 numberOfFunders = 10;
         uint160 startingFunderIdx = 1;
-        for (uint160 i=startingFunderIdx; i<numberOfFunders; i++) {
+        for (uint160 i = startingFunderIdx; i < numberOfFunders; i++) {
             //vm.prank(new Add.) -> (new Add.) -> fund the fundMe
             hoax(address(i), Send_Val);
             fundMe.fund{value: Send_Val}();
@@ -109,7 +109,7 @@ contract FundMeTest is Test {
         //Arrange
         uint160 numberOfFunders = 10;
         uint160 startingFunderIdx = 1;
-        for (uint160 i=startingFunderIdx; i<numberOfFunders; i++) {
+        for (uint160 i = startingFunderIdx; i < numberOfFunders; i++) {
             //vm.prank(new Add.) -> (new Add.) -> fund the fundMe
             hoax(address(i), Send_Val);
             fundMe.fund{value: Send_Val}();
@@ -127,4 +127,4 @@ contract FundMeTest is Test {
         assert(address(fundMe).balance == 0);
         assert(startingFundMeBal + startingOwnerBal == fundMe.getOwner().balance);
     }
-} 
+}
