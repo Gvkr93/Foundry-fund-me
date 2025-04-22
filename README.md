@@ -1,66 +1,58 @@
-## Foundry
+# Foundry Fund Me
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A full-stack crowdfunding dApp powered by **Foundry** for the smart contracts and an **HTML frontend** to interact with the deployed contract.
 
-Foundry consists of:
+This project includes:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- Contract deployment using Chainlink price feeds
+- Funding & withdrawal logic with owner-only control along with Mock contracts for local testing
+- Scripts for Environment-aware config Anvil, Sepolia, and Mainnet
+- A simple frontend in `html-fund-me/` to connect with the contract
 
-## Documentation
+# Requirements
 
-https://book.getfoundry.sh/
+## Foundry 
+Documentation - https://book.getfoundry.sh/
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
+## .env file with:
+```
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/your_project_id
+MAINNET_RPC_URL=https://mainnet.infura.io/v3/your_project_id
+PRIVATE_KEY=your_private_key
 ```
 
-### Test
+# Smart Contract Usage
 
-```shell
-$ forge test
+## Install Dependencies
+
+```
+forge install
 ```
 
-### Format
+## Build Contracts
 
-```shell
-$ forge fmt
+```
+forge install
 ```
 
-### Gas Snapshots
+## Run Tests
 
-```shell
-$ forge snapshot
+```
+forge test
 ```
 
-### Anvil
+## Deploy to Sepolia
 
-```shell
-$ anvil
+```
+forge script script/DeployFundMe.s.sol:DeployFundMe \
+  --rpc-url $SEPOLIA_RPC_URL \
+  --private-key $PRIVATE_KEY \
+  --broadcast
 ```
 
-### Deploy
+# Built using 
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+-  Foundry
+-  Solidity
+-  Chainlink Price Feeds
+-  HTML (frontend)
