@@ -1,58 +1,68 @@
 # Foundry Fund Me
 
-A full-stack crowdfunding dApp powered by **Foundry** for the smart contracts and an **HTML frontend** to interact with the deployed contract.
+A crowdfunding dApp powered by **Foundry** for the smart contracts and an **HTML frontend** to interact with the deployed contract.
 
-This project includes:
+## 🚀 Features:
 
 - Contract deployment using Chainlink price feeds
 - Funding & withdrawal logic with owner-only control along with Mock contracts for local testing
 - Scripts for Environment-aware config Anvil, Sepolia, and Mainnet
 - A simple frontend in `html-fund-me/` to connect with the contract
 
-# Requirements
+## 🛠 Built using 
 
-## Foundry 
+-  **Deployment**: Foundry, Alchemy
+-  **Smart Contracts**: Solidity
+-  **Off-chain Data**: dataChainlink Price Feeds
+-  **Frontend**: HTML
+
+## Requirements
+
+### Foundry 
+
 Documentation - https://book.getfoundry.sh/
 
-## .env file with:
+### .env file should contain
+
 ```
 SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/your_project_id
 MAINNET_RPC_URL=https://mainnet.infura.io/v3/your_project_id
 PRIVATE_KEY=your_private_key
 ```
 
-# Smart Contract Usage
+## 🚀 Smart Contract Usage
 
-## Install Dependencies
+### 1.  **Clone the repository**:
 
-```
-forge install
-```
+    ```bash
+    git clone [https://github.com/yourusername/foundry-fund-me](https://github.com/yourusername/foundry-fund-me)
+    cd foundry-fund-me
+    ```
 
-## Build Contracts
+### 2.  **Install dependencies**:
 
-```
-forge install
-```
+    ```bash
+    forge install
+    ```
 
-## Run Tests
+### 3. **Build Contracts**:
 
-```
-forge test
-```
+    ```bash
+    forge build
+    ```
 
-## Deploy to Sepolia
+### 4. **Run Tests**:
 
-```
-forge script script/DeployFundMe.s.sol:DeployFundMe \
-  --rpc-url $SEPOLIA_RPC_URL \
-  --private-key $PRIVATE_KEY \
-  --broadcast
-```
+    ```bash
+    forge test
+    ```
 
-# Built using 
+### 5. **Deploy to Sepolia**:
 
--  Foundry
--  Solidity
--  Chainlink Price Feeds
--  HTML (frontend)
+    ```bash
+    forge script script/DeployFundMe.s.sol:DeployFundMe \
+      --rpc-url $SEPOLIA_RPC_URL \
+      --private-key $PRIVATE_KEY \
+      --broadcast
+    ```
+

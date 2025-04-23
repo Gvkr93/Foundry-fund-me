@@ -7,6 +7,3 @@
 [submodule "lib/foundry-devops"]
 	path = lib/foundry-devops
 	url = https://github.com/Cyfrin/foundry-devops
-[submodule "html-fund-me"]
-	path = html-fund-me
-	url = https://github.com/Cyfrin/html-fund-me-cu
