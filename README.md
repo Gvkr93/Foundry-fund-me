@@ -4,17 +4,18 @@ A crowdfunding dApp powered by **Foundry** for the smart contracts and an **HTML
 
 ## 🚀 Features:
 
-- Contract deployment using Chainlink price feeds
+- Contract deployment via Foundry with integrated Chainlink Price Feeds
 - Funding & withdrawal logic with owner-only control along with Mock contracts for local testing
 - Scripts for Environment-aware config Anvil, Sepolia, and Mainnet
-- A simple frontend in `html-fund-me/` to connect with the contract
+- A simple, connectable frontend in `html-fund-me/` to interact with the deployed contract
 
 ## 🛠 Built using 
 
--  **Deployment**: Foundry, Alchemy
--  **Smart Contracts**: Solidity
--  **Off-chain Data**: dataChainlink Price Feeds
--  **Frontend**: HTML
+-  **Foundry**: development, testing, and deployment
+-  **Solidity**: Smart Contracts
+-  **Chainlink**: for decentralized price feeds
+-  **Alchemy / Infura**: for RPC access to Sepolia/Mainnet
+-  **HTML + JS**: lightweight frontend for interaction
 
 ## Requirements
 
@@ -30,7 +31,7 @@ MAINNET_RPC_URL=https://mainnet.infura.io/v3/your_project_id
 PRIVATE_KEY=your_private_key
 ```
 
-## 🚀 Smart Contract Usage
+## Smart Contract Usage
 
 ### 1.  **Clone the repository**:
 
